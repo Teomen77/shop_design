@@ -1,6 +1,7 @@
 import 'package:bakkal/pages/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'pages/getstarted.dart';
+import 'pages/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GetStarted(),
+      home: LoginPage(),
+      //defining routes for the onTap function
+      routes: {
+        '/getstarted': (context) => const GetStarted(),
+        '/homescreen': (context) => const HomeScreen(),
+      },
     );
   }
 }

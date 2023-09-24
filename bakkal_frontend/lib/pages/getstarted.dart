@@ -16,15 +16,16 @@ class GetStarted extends StatelessWidget {
         child: SingleChildScrollView(
           // needed for fix of bottom overflow by x pixels
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               //header
               Text(
                 "BakkalNavi",
                 style: GoogleFonts.dmSerifDisplay(
+                    decoration: TextDecoration.underline,
                     fontSize: 35,
                     color: const Color.fromARGB(255, 248, 248, 248)),
               ),
@@ -60,25 +61,31 @@ class GetStarted extends StatelessWidget {
               const SizedBox(),
 
               //get started button
-              Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 170, 21, 21),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: EdgeInsets.all(20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Get Started",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    const SizedBox(width: 10),
-                    Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
-                    )
-                  ],
+              GestureDetector(
+                onTap: () {
+                  //go to HomeScreen
+                  Navigator.pushNamed(context, '/homescreen');
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 170, 21, 21),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: EdgeInsets.all(20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Get Started",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      const SizedBox(width: 10),
+                      Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

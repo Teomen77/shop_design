@@ -8,6 +8,8 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+//class to build the bottom navigation bar button
+
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   Widget _buildBottomBar() {
@@ -36,10 +38,19 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+//beginning of Scaffold
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //body: _buildBody(),
+      backgroundColor: Color.fromARGB(255, 105, 2, 2),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        title: const Text("Bakkal"),
+      ),
+    );
+
+    /*
       backgroundColor: Colors.red[100],
       bottomNavigationBar: _buildBottomBar(),
       extendBody: true,
@@ -51,6 +62,6 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Icon(Icons.add),
         ),
       ),
-    );
+   */
   }
 }
