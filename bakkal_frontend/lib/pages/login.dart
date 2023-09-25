@@ -23,20 +23,25 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Lottie.network(
-                      'https://lottie.host/8584e336-399d-4d43-86f8-594a16a5fd5a/VXNG6W5mag.json'),
-                ),
-                Text(
-                  "Oh, hi there!",
-                  style: GoogleFonts.bebasNeue(
-                      fontSize: 40, fontWeight: FontWeight.bold),
+                    padding: const EdgeInsets.only(),
+                    child: LottieBuilder.asset(
+                      'assets/astronaut.json',
+                      height: 250,
+                    )),
+                Padding(
+                  padding: const EdgeInsets.only(top: 0),
+                  child: Text(
+                    "Oh, hi there!",
+                    style: GoogleFonts.bebasNeue(
+                        fontSize: 40, fontWeight: FontWeight.bold),
+                  ),
                 ),
 
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Text(
-                    "Great to see you again. You have been missed a lot! ",
+                    "Great to see you again.\nYou have been missed a lot! ",
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.dmSans(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
@@ -104,22 +109,31 @@ class _LoginPageState extends State<LoginPage> {
                 //sign in button
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 146, 182, 208),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Center(
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                  child: GestureDetector(
+                    onTap: () {
+                      //go to GetStarted
+                      Navigator.pushNamed(context, '/getstarted');
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 146, 182, 208),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Center(
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 10,
+                )
               ],
 
               //register button

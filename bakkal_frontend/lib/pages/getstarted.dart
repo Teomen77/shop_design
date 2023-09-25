@@ -30,15 +30,16 @@ class GetStarted extends StatelessWidget {
                     color: const Color.fromARGB(255, 248, 248, 248)),
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
 
               //text1
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Text(
                   "Your products may run away from you!",
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.dmSerifText(
-                      fontSize: 35, color: Color.fromARGB(255, 204, 214, 231)),
+                      fontSize: 20, color: Color.fromARGB(255, 204, 214, 231)),
                 ),
               ),
 
@@ -47,16 +48,15 @@ class GetStarted extends StatelessWidget {
               //text2
               Text(
                 "Go Catch em!",
+                textAlign: TextAlign.center,
                 style: GoogleFonts.dmSerifText(
-                    fontSize: 35, color: Color.fromARGB(255, 204, 214, 231)),
+                    fontSize: 20, color: Color.fromARGB(255, 204, 214, 231)),
               ),
 
               //animation
               Padding(
-                padding: const EdgeInsets.all(40),
-                child: Lottie.network(
-                    'https://lottie.host/7f810105-6ece-4cf8-b0bb-9e66f672d363/gV31EjTanb.json'),
-              ),
+                  padding: const EdgeInsets.all(90),
+                  child: Lottie.asset('assets/cart.json')),
 
               const SizedBox(),
 
